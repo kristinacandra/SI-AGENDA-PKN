@@ -1,0 +1,60 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DatauserController;
+use App\Http\Controllers\DataPegawaiController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('dashboard.index');
+});
+
+Route::get('/dashboard/DataJadwal', function () {
+    return view('dashboard.DataJadwal.index');
+});
+
+Route::get('/dashboard/DataPegawai', function () {
+    return view('dashboard.DataPegawai.index');
+});
+
+Route::get('/dashboard/DataAgenda', function () {
+    return view('dashboard.DataAgenda.index');
+});
+Route::get('/dashboard/DataLaporan', function () {
+    return view('dashboard.DataLaporan.index');
+});
+//user
+Route::get('/user', [DatauserController::class,'index'])->name('user');
+Route::get('/user/create',[DatauserController::class, 'create'])->name( 'user.create');
+Route::post('/user/store',[DatauserController::class, 'store'])->name( 'user.store');
+Route::delete('/user/destroy/{id}',[DatauserController::class, 'destroy'])->name('user.destroy');
+Route::get('/user/Edit/{id}',[DatauserController::class, 'edit'])->name( 'user.edit');
+Route::put('/user/update/{id}',[DatauserController::class, 'update'])->name( 'user.update');
+// Route::get('/reportpdf',[JadwalController::class, 'reportpdf'])-> name('jadwal.report'); 
+
+//pegawai
+Route::get('/pegawai', [DataPegawaiController::class,'index'])->name('pegawai');
+Route::get('/pegawai/create',[DataPegawaiController::class, 'create'])->name( 'pegawai.create');
+Route::post('/pegawai/store',[DataPegawaiController::class, 'store'])->name( 'pegawai.store');
+Route::delete('/pegawai/destroy/{id}',[DataPegawaiController::class, 'destroy'])->name('pegawai.destroy');
+Route::get('/pegawai/Edit/{id}',[DataPegawaiController::class, 'edit'])->name( 'pegawai.edit');
+Route::put('/pegawai/update/{id}',[DataPegawaiController::class, 'update'])->name( 'pegawai.update');
+
+
+Route::get('/register',[UserController::class, 'register'])->name('register');
+Route::post('/register',[UserController::class, 'register_action'])->name('register.action');
+Route::get('/login',[UserController::class, 'login'])->name('login');
+Route::post('/login',[UserController::class, 'login_action'])->name('login.action');
+
+
+

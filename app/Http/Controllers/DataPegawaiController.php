@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DataPegawai;
+use Illuminate\Support\Facades\Session;
 
 class DataPegawaiController extends Controller
 {
@@ -35,7 +36,7 @@ class DataPegawaiController extends Controller
             'no_hp' => 'required',
         ]);
         DataPegawai::create($data);
-        return redirect()->route('dashboard.DataPegawai.store')->with('success', 'Berhasil Melakukan Tambah Data');
+        return redirect()->route('pegawai')->with('success', 'Berhasil Melakukan Tambah Data');
     }
 
     /**
@@ -52,7 +53,7 @@ class DataPegawaiController extends Controller
     public function edit(string $id)
     {
         $data = DataPegawai::where('id',$id)->first();
-        return view('pegawai.edit')->with('data', $data);
+        return view('dashboard.DataPegawai.edit')->with('data', $data);
     }
 
     /**
@@ -63,7 +64,7 @@ class DataPegawaiController extends Controller
         $data = $request->validate([
             'nama' => 'required',
             'email' => 'required',
-            'nohp' => 'required',
+            'no_hp' => 'required',
            
         ]);
         DataPegawai::where('id',$id)->update($data);

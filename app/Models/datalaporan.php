@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class datalaporan extends Model
 {
     use HasFactory;
+    protected $table = "data_pegawai";
+    protected $fillable =[
+        'nama',
+        'no_hp',
+        'role',
+        'email',
+    ];
 }

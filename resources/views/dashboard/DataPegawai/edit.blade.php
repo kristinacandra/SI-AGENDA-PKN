@@ -28,8 +28,8 @@
     </div>
     <div class="mb-3">
         <label for="" class="form-label">No.Hp</label>
-        <input type="string" class="form-control form-control-sm" name="nohp" id="nohp" placeholder=""
-            value="{{$data->nohp}}">
+        <input type="string" class="form-control form-control-sm" name="no_hp" id="no_hp" placeholder=""
+            value="{{$data->no_hp}}">
     </div>
     <a href="{{route('pegawai')}}" class="btn btn-secondary">Kembali</a>
     <button class="btn btn-primary" name="simpan" type="submit">SIMPAN</button>

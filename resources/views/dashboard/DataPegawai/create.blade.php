@@ -27,7 +27,7 @@
     </div>
     <div class="mb-3">
         <label for="" class="form-label">No.HP</label>
-        <input type="string" class="form-control form-control-sm" name="nohp" id="nohp" placeholder="nohp"
+        <input type="string" class="form-control form-control-sm" name="no_hp" id="no_hp" placeholder="no_hp"
             value="">
     </div>
     <a href="{{route('pegawai')}}" class="btn btn-secondary">Kembali</a>

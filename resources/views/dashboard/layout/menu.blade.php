@@ -52,7 +52,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="pegawai" class="nav-link">
+                    <a href="{{route('pegawai')}}" class="nav-link">
                         <i class="nav-icon far fa-list-alt"></i>
                         <p>
                             Data Pegawai

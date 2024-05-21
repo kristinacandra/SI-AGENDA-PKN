@@ -50,6 +50,13 @@ Route::delete('/pegawai/destroy/{id}',[DataPegawaiController::class, 'destroy'])
 Route::get('/pegawai/Edit/{id}',[DataPegawaiController::class, 'edit'])->name( 'pegawai.edit');
 Route::put('/pegawai/update/{id}',[DataPegawaiController::class, 'update'])->name( 'pegawai.update');
 
+//agenda
+Route::get('/agenda', [DataAgendaController::class,'index'])->name('agenda');
+Route::get('/agenda/create',[DataAgendaController::class, 'create'])->name( 'agenda.create');
+Route::post('/agenda/store',[DataAgendaController::class, 'store'])->name( 'agenda.store');
+Route::delete('/agenda/destroy/{id}',[DataAgendaController::class, 'destroy'])->name('agenda.destroy');
+Route::get('/agenda/Edit/{id}',[DataAgendaController::class, 'edit'])->name( 'agenda.edit');
+Route::put('/agenda/update/{id}',[DataAgendaController::class, 'update'])->name( 'agenda.update');
 
 Route::get('/register',[UserController::class, 'register'])->name('register');
 Route::post('/register',[UserController::class, 'register_action'])->name('register.action');

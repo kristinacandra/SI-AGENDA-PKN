@@ -32,6 +32,7 @@
         <table>
             <thead>
                 <tr>
+                    <th >No</th>
                     <th >Nama</th>
                     <th >Email</th>
                     <th >No.Hp</th>
@@ -39,13 +40,29 @@
                 </tr>
             </thead>
             <tbody>
+                <?php $i = 1; ?>
+                @foreach ($data as $item)
                     <tr>
-                        <td class="col-1">Cornelia</td>
-                        <td class="col-2">Corneliaboro@gmail.com</td>
-                        <td class="col-2">089767114342</td>
-                        <td>Edit | Delete</td>
+                        <td class="col-1">{{ $i }}</td>
+                        <td class="col-2">{{ $item->nama }}</td>
+                        <td class="col-2">{{ $item->email }}</td>
+                        <td class="col-2">{{ $item->no_hp }}</td>
+                        <td class="col-2">
+                            <a href="{{route('pegawai.edit',$item->id)}}" class="btn btn-sm btn-warning">Edit</a>
+                            <form onsubmit="return confirm('Apakah Anda Ingin Menghapus Data Ini?')" 
+                              action=" {{ route('pegawai.destroy', $item->id) }}"
+                              class="d-inline" method="post">
+                              @csrf
+                              @method('DELETE')
+                              <button class="btn btn-sm btn-danger" type="submit" name="submit">
+                                Del
+                              </button>
+                          </form>
+                        </td>
                     </tr>
-            </tbody>
+                    <?php $i++; ?>
+                @endforeach
+              </tbody>
         </table>
     </div>
 @endsection

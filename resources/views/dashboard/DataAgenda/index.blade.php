@@ -18,7 +18,7 @@
     <div class="card mx-3">
         <div class="card-body">
             <div>
-                <a href="" class="btn btn-primary">+ Tambah Data</a>
+                <a href="{{route('agenda.create')}}" class="btn btn-primary">+ Tambah Data</a>
                 <a href="\reportdosen" rel="noopener" target="_blank" class="btn btn-secondary"><i class="fas fa-print"></i>
                     Print</a>
             </div>
@@ -42,16 +42,31 @@
                 </tr>
             </thead>
             <tbody>
+                <?php $i = 1; ?>
+                @foreach ($data as $item)
                     <tr>
-                        <td class="col-1"> 1 </td>
-                        <td class="col-1">Halo</td>
-                        <td class="col-2">Hai</td>
-                        <td class="col-2">Halo</td>
-                        <td class="col-2">Hai</td>
-                        <td class="col-2">Hai</td>
-                        <td>Edit | Delete</td>
+                        <td class="col-1">{{ $i }}</td>
+                        <td class="col-2">{{ $item->Program }}</td>
+                        <td class="col-2">{{ $item->agenda_kegiatan }}</td>
+                        <td class="col-2">{{ $item->tgl_pelaksanaan }}</td>
+                        <td class="col-2">{{ $item->waktu_pelaksanaan }}</td>
+                        <td class="col-2">{{ $item->status }}</td>
+                        <td class="col-2">
+                            <a href="{{route('agenda.edit',$item->id)}}" class="btn btn-sm btn-warning">Edit</a>
+                            <form onsubmit="return confirm('Apakah Anda Ingin Menghapus Data Ini?')" 
+                              action=" {{ route('agenda.destroy', $item->id) }}"
+                              class="d-inline" method="post">
+                              @csrf
+                              @method('DELETE')
+                              <button class="btn btn-sm btn-danger" type="submit" name="submit">
+                                Del
+                              </button>
+                          </form>
+                        </td>
                     </tr>
-            </tbody>
-        </table>
+                    <?php $i++; ?>
+                @endforeach
+              </tbody>
+            </table>
     </div>
 @endsection

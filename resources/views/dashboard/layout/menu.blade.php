@@ -20,7 +20,7 @@
 
 
                 <li class="nav-item">
-                    <a href="/dashboard/DataAgenda" class="nav-link">
+                    <a href="{{route('agenda')}}" class="nav-link">
                         <i class="nav-icon far fa-file-alt"></i>
                         <p>
                             Data Agenda
@@ -28,7 +28,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/dashboard/DataJadwal" class="nav-link">
+                    <a href="{{route('jadwal')}}" class="nav-link">
                         <i class="nav-icon far fa-file-alt"></i>
                         <p>
                             Data Jadwal
@@ -55,7 +55,7 @@
                     <a href="{{route('pegawai')}}" class="nav-link">
                         <i class="nav-icon far fa-list-alt"></i>
                         <p>
-                            Data Pegawai
+                            Data Admin
                         </p>
                     </a>
                 </li>

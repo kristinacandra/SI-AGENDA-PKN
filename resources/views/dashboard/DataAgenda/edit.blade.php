@@ -18,34 +18,30 @@
     @method('PUT')
     <div class="mb-3">
         <label for="" class="form-label">Program</label>
-        <input type="string" class="form-control form-control-sm" name="program" id="program" placeholder=""
-            value="{{$data->program}}">
+        <input type="string" class="form-control form-control-sm" name="Program" id="Program" placeholder=""
+            value="{{$data->Program}}">
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Agenda Kegiatan</label>
         <input type="string" class="form-control form-control-sm" name="agenda_kegiatan" id="agenda_kegiatan" placeholder=""
-            value="{{$data->agenda_program}}">
+            value="{{$data->agenda_kegiatan}}">
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Tanggal Pelaksanaan</label>
-        <input date="string" class="form-control form-control-sm" name="tgl_pelaksanaan" id="tgl_pelaksanaan" placeholder=""
+        <input type="date" class="form-control form-control-sm" name="tgl_pelaksanaan" id="tgl_pelaksanaan" placeholder=""
             value="{{$data->tgl_pelaksanaan}}">
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Waktu Pelaksanaan</label>
-        <input time="string" class="form-control form-control-sm" name="waktu_pelaksanaan" id="waktu_pelaksanaan" placeholder=""
+        <input type="time" class="form-control form-control-sm" name="waktu_pelaksanaan" id="waktu_pelaksanaan" placeholder=""
             value="{{$data->waktu_pelaksanaan}}">
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Status</label>
         <select name="status" class="form-control">
-            <option value="">--- Pilih Status ---</option>
-            <option value="Sudah Dilaksankan"></option>
-            <option value="Sedang Dilaksankan"></option>
-            <option value="Belum Dilaksankan"></option>
-            {{-- @foreach ($agenda as $iddata)
-                <option value="{{ $iddata->id }}" selected>{{ $iddata->id }}</option>
-            @endforeach --}}
+            <option value="Belum Terlaksana" {{ $data->status == 'Belum Terlaksana' ? 'selected' : '' }}>Belum Terlaksana</option>
+            <option value="Sedang Terlaksana" {{ $data->status == 'Sedang Terlaksana' ? 'selected' : '' }}>Sedang Terlaksana</option>
+            <option value="Sudah Terlaksana" {{ $data->status == 'Sudah Terlaksana' ? 'selected' : '' }}>Sudah Terlaksana</option>
         </select>
     </div>
     <a href="{{route('agenda')}}" class="btn btn-secondary">Kembali</a>

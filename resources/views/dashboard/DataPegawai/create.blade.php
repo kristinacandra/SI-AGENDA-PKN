@@ -2,7 +2,7 @@
 @section('header')
     <div class="row mb-2 mx-2 justify-content-between">
         <div class="col-sm-5">
-            <h1>Tambah Data Pegawai</h1>
+            <h1>Tambah Data Admin</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -31,7 +31,7 @@
             value="">
     </div>
     <a href="{{route('pegawai')}}" class="btn btn-secondary">Kembali</a>
-    <button class="btn btn-primary" name="simpan" type="submit">SIMPAN</button>    
+    <button class="btn btn-primary" name="simpan" type="submit">SIMPAN</button>
 </form>
 @endsection
 

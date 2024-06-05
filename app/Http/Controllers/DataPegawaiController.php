@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DataPegawai;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
+use Barryvdh\DomPDF\PDF as DomPDFPDF;
 use Illuminate\Support\Facades\Session;
+use PDF;
 
 class DataPegawaiController extends Controller
 {
@@ -65,7 +68,7 @@ class DataPegawaiController extends Controller
             'nama' => 'required',
             'email' => 'required',
             'no_hp' => 'required',
-           
+
         ]);
         DataPegawai::where('id',$id)->update($data);
         return redirect()->route('pegawai')->with('success', 'Berhasil Melakukan Update Data');
@@ -79,4 +82,12 @@ class DataPegawaiController extends Controller
         DataPegawai::where('id',$id)->delete();
         return redirect()->route('pegawai')->with('success', 'Berhasil Melakukan Delete Data');
     }
+
+    public function exportpdf(){
+        $data = DataPegawai::all();
+        view()->share('data', $data);
+        $pdf = FacadePdf::loadview('dashboard.DataPegawai.report');
+        return $pdf->download('DataAdmin.pdf');
+    }
+
 }

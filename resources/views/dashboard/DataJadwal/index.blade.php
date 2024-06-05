@@ -18,7 +18,7 @@
     <div class="card mx-3">
         <div class="card-body">
             <div>
-                <a href="" class="btn btn-primary">+ Tambah Data</a>
+                <a href="{{route('jadwal.create')}}" class="btn btn-primary">+ Tambah Data</a>
                 <a href="\reportdosen" rel="noopener" target="_blank" class="btn btn-secondary"><i class="fas fa-print"></i>
                     Print</a>
             </div>
@@ -28,41 +28,43 @@
 @endsection
 
 @section('konten')
-<table class="table table-bordered">
-    <thead>
-        <br/>
-      <tr>
-        <th scope="col">No</th>
-        <th scope="col">Judul Kegiatan</th>
-        <th scope="col">Nama Penanggungjawab</th>
-        <th scope="col">Tanggal</th>
-        <th scope="col">Waktu</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Workshop Penyuluhan “Cerdas Tanpa Stunting”</td>
-        <td>Ibu</td>
-        <td>20 Februari 2024</td>
-        <td>08.40</td>
-        <td>Edit | Delete</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Webinar “Menuju Kelurahan Terdigital”</td>
-        <td>Bapak</td>
-        <td>22 Februari 2024</td>
-        <td>10.20</td>
-        <td>Edit | Delete</td>
-      </tr>
-        <tr>
-        <td>3</td>
-        <td>Penyuluhan “Kesehatan Mental Keluarga</td>
-        <td>Ibu</td>
-        <td>1 Maret 2024</td>
-        <td>9.20</td>
-        <td>Edit | Delete</td>
-      </tr>
+    <div class="table table-bordered">
+        <table>
+            <thead>
+                <tr>
+                    <th >No</th>
+                    <th >Judul Kegiatan</th>
+                    <th >Nama Penanggungjawab</th>
+                    <th >Tanggal</th>
+                    <th >Waktu</th>
+                    <th >Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php $i = 1; ?>
+                @foreach ($data as $item)
+                    <tr>
+                        <td class="col-1">{{ $i }}</td>
+                        <td class="col-2">{{ $item->judul_kegiatan }}</td>
+                        <td class="col-2">{{ $item->nama_pj }}</td>
+                        <td class="col-2">{{ $item->tanggal }}</td>
+                        <td class="col-2">{{ $item->waktu }}</td>
+                        <td class="col-2">
+                            <a href="{{route('jadwal.edit',$item->id)}}" class="btn btn-sm btn-warning">Edit</a>
+                            <form onsubmit="return confirm('Apakah Anda Ingin Menghapus Data Ini?')"
+                              action=" {{ route('jadwal.destroy', $item->id) }}"
+                              class="d-inline" method="post">
+                              @csrf
+                              @method('DELETE')
+                              <button class="btn btn-sm btn-danger" type="submit" name="submit">
+                                Del
+                              </button>
+                          </form>
+                        </td>
+                    </tr>
+                    <?php $i++; ?>
+                @endforeach
+              </tbody>
+            </table>
+    </div>
 @endsection

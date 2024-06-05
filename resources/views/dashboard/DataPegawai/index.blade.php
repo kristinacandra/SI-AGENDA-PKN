@@ -4,7 +4,7 @@
 @section('header')
     <div class="row mb-2 mx-2 justify-content-between">
         <div class="col-sm-5">
-            <h1>Data Pegawai</h1>
+            <h1>Data Admin</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -19,7 +19,7 @@
         <div class="card-body">
             <div>
                 <a href="{{route('pegawai.create')}}" class="btn btn-primary">+ Tambah Data</a>
-                <a href="\reportdosen" rel="noopener" target="_blank" class="btn btn-secondary"><i class="fas fa-print"></i>
+                <a href="{{route('pegawai.exportpdf')}}" rel="noopener" target="_blank" class="btn btn-secondary"><i class="fas fa-print"></i>
                     Print</a>
             </div>
 
@@ -49,7 +49,7 @@
                         <td class="col-2">{{ $item->no_hp }}</td>
                         <td class="col-2">
                             <a href="{{route('pegawai.edit',$item->id)}}" class="btn btn-sm btn-warning">Edit</a>
-                            <form onsubmit="return confirm('Apakah Anda Ingin Menghapus Data Ini?')" 
+                            <form onsubmit="return confirm('Apakah Anda Ingin Menghapus Data Ini?')"
                               action=" {{ route('pegawai.destroy', $item->id) }}"
                               class="d-inline" method="post">
                               @csrf

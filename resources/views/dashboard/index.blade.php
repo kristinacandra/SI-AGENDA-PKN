@@ -62,12 +62,12 @@
                 <!-- small box -->
                 <div class="small-box bg-warning">
                     <div class="inner">
-                        <p>Data Alternatif</p>
+                        <p>Data Agenda</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
                     </div>
-                    <a href=" " class="small-box-footer">More info <i
+                    <a href="{{route('agenda')}}" class="small-box-footer">More info <i
                             class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
@@ -76,12 +76,12 @@
                 <!-- small box -->
                 <div class="small-box bg-danger">
                     <div class="inner">
-                        <p>Data Kriteria</p>
+                        <p>Data Jadwal</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>
                     </div>
-                    <a href="" class="small-box-footer">More info <i
+                    <a href="{{route('jadwal')}}" class="small-box-footer">More info <i
                             class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
@@ -90,12 +90,12 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <p>Data Aslab</p>
+                        <p>Data Admin</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>
                     </div>
-                    <a href=" " class="small-box-footer">More info <i
+                    <a href="{{route('pegawai')}}" class="small-box-footer">More info <i
                             class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>

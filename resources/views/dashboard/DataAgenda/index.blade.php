@@ -33,10 +33,10 @@
             <thead>
                 <tr>
                     <th >No</th>
-                    <th >Program</th>
+                    <th >Nomor Surat Undangan</th>
                     <th >Agenda Kegiatan</th>
-                    <th >Tanggal Pelaksanaan</th>
-                    <th >Waktu Pelaksanaan</th>
+                    <th >Tanggal</th>
+                    <th >Waktu</th>
                     <th >Status</th>
                     <th >Action</th>
                 </tr>
@@ -53,7 +53,7 @@
                         <td class="col-2">{{ $item->status }}</td>
                         <td class="col-2">
                             <a href="{{route('agenda.edit',$item->id)}}" class="btn btn-sm btn-warning">Edit</a>
-                            <form onsubmit="return confirm('Apakah Anda Ingin Menghapus Data Ini?')" 
+                            <form onsubmit="return confirm('Apakah Anda Ingin Menghapus Data Ini?')"
                               action=" {{ route('agenda.destroy', $item->id) }}"
                               class="d-inline" method="post">
                               @csrf

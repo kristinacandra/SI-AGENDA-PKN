@@ -14,7 +14,7 @@ class DataAgendaController extends Controller
     public function index()
     {
         $data = DataAgenda:: all();
-        return view('dashboard.DataAgenda.index')->with('data',$data);
+        return view('dashboard.DataAgenda.index',compact('data')) ;
     }
 
     /**
@@ -54,8 +54,8 @@ class DataAgendaController extends Controller
      */
     public function edit(string $id)
     {
-        // $data = DataPegawai::where('id',$id)->first();
-        // return view('dashboard.DataPegawai.edit')->with('data', $data);
+        $data = DataAgenda::where('id',$id)->first();
+        return view('dashboard.DataAgenda.edit')->with('data', $data);
     }
 
     /**
@@ -63,14 +63,16 @@ class DataAgendaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // $data = $request->validate([
-        //     'nama' => 'required',
-        //     'email' => 'required',
-        //     'no_hp' => 'required',
-           
-        // ]);
-        // DataPegawai::where('id',$id)->update($data);
-        // return redirect()->route('pegawai')->with('success', 'Berhasil Melakukan Update Data');
+        $data = $request->validate([
+            'Program' => 'required',
+            'agenda_kegiatan' => 'required',
+            'tgl_pelaksanaan' => 'required',
+            'waktu_pelaksanaan' => 'required',
+            'status' => 'required',
+
+        ]);
+        DataAgenda::where('id',$id)->update($data);
+        return redirect()->route('agenda')->with('success', 'Berhasil Melakukan Update Data');
     }
 
     /**
@@ -78,7 +80,7 @@ class DataAgendaController extends Controller
      */
     public function destroy(string $id)
     {
-        // DataPegawai::where('id',$id)->delete();
-        // return redirect()->route('pegawai')->with('success', 'Berhasil Melakukan Delete Data');
+        DataAgenda::where('id',$id)->delete();
+        return redirect()->route('agenda')->with('success', 'Berhasil Melakukan Delete Data');
     }
 }

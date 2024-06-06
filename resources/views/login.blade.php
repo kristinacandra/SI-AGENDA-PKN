@@ -16,7 +16,7 @@
         <form action="{{ route('login.action') }}" method="POST">
             @csrf
                 <div class="mb-3">
-                    <label>Username <span class="text-danger">*</span></label>
+                    <label>Email <span class="text-danger">*</span></label>
                     <input class="form-control" type="username" name="username" value="{{ old('username') }}" />
                 </div>
                 <div class="mb-3">
@@ -24,8 +24,8 @@
                     <input class="form-control" type="password" name="password" />
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-primary" href="{{ route('dashboard') }}">Login</button>
-                    <a class="btn btn-danger" href="{{ route('home') }}">Back</a>
+                    <button class="btn btn-primary" href='/'>Login</button>
+                    {{-- <a class="btn btn-danger" href="{{ route('home') }}">Back</a> --}}
                 </div>
             </div>
         </form>

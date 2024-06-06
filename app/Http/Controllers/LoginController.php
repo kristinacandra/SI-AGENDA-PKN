@@ -8,16 +8,16 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
-class UserController extends Controller
+class LoginController extends Controller
 {
     protected $redirectTo = '/dashboard';
-    
+
     public function index()
     {
         $data = User::all();
         return view('dashboard.datauser.index', compact('data'));
     }
-    
+
     public function register()
     {
         $data['title'] = 'Register';
@@ -37,7 +37,7 @@ class UserController extends Controller
             'password.required' => 'Password Wajib Diisi!',
             'password_confirmation.required' => 'Password Confirmation Wajib Diisi!',
         ]);
-        
+
         $user = new User([
             'name' => $request->name,
             'email' => $request->email,
@@ -50,7 +50,7 @@ class UserController extends Controller
     public function login()
     {
         $data['title'] = 'Login';
-        return view('user/login',$data);
+        return view('login',$data);
     }
 
     public function login_action(Request $request)
@@ -59,12 +59,12 @@ class UserController extends Controller
             'email' => 'required',
             'password' => 'required',
         ],[
-            'email.required' => 'email Wajib Diisi!',
+            'email.required' => 'Email Wajib Diisi!',
             'password.required' => 'Password Wajib Diisi!',
         ]);
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/');
         }
         return back()->withErrors([
             'password' => 'Password atau email Salah!',
@@ -89,7 +89,7 @@ class UserController extends Controller
         Session::flash('nama', $request->name);
         Session::flash('email', $request->email);
 
-        $request->validate([   
+        $request->validate([
             'email'=>'required|unique:dataaslab',
             'nama'=>'required',
         ]);

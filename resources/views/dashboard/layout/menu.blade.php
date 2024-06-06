@@ -23,7 +23,7 @@
                     <a href="{{route('agenda')}}" class="nav-link">
                         <i class="nav-icon far fa-file-alt"></i>
                         <p>
-                            Data Agenda
+                            Data Agenda Eksternal
                         </p>
                     </a>
                 </li>
@@ -31,7 +31,7 @@
                     <a href="{{route('jadwal')}}" class="nav-link">
                         <i class="nav-icon far fa-file-alt"></i>
                         <p>
-                            Data Jadwal
+                            Data Jadwal Kegiatan
                         </p>
                     </a>
                 </li>

@@ -11,7 +11,7 @@ class DataAgenda extends Model
     protected $table = "data_agenda";
     protected $fillable =[
         'id',
-        'Program',
+        'no_surat',
         'agenda_kegiatan',
         'tgl_pelaksanaan',
         'waktu_pelaksanaan',

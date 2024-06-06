@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\DataPegawai;
 use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
-use Barryvdh\DomPDF\PDF as DomPDFPDF;
 use Illuminate\Support\Facades\Session;
-use PDF;
 
 class DataPegawaiController extends Controller
 {
@@ -87,7 +85,7 @@ class DataPegawaiController extends Controller
         $data = DataPegawai::all();
         view()->share('data', $data);
         $pdf = FacadePdf::loadview('dashboard.DataPegawai.report');
-        return $pdf->download('DataAdmin.pdf');
+        return $pdf->stream('DataAdmin.pdf');
     }
 
 }

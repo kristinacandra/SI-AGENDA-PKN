@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DataJadwal;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 
 class DataJadwalController extends Controller
 {
@@ -78,5 +79,12 @@ class DataJadwalController extends Controller
     {
         DataJadwal::where('id',$id)->delete();
         return redirect()->route('jadwal')->with('success', 'Berhasil Melakukan Delete Data');
+    }
+
+    public function exportpdf(){
+        $data = DataJadwal::all();
+        view()->share('data', $data);
+        $pdf = FacadePdf::loadview('dashboard.DataJadwal.report');
+        return $pdf->stream('DataJadwal.pdf');
     }
 }

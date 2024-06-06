@@ -4,11 +4,11 @@
 @section('header')
     <div class="row mb-2 mx-2 justify-content-between">
         <div class="col-sm-5">
-            <h1>Data Jadwal</h1>
+            <h1>Data Jadwal Kegiatan</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item active">Daftar Jadwal</li>
+                <li class="breadcrumb-item active">Daftar Jadwal Kegiatan</li>
             </ol>
         </div>
     </div>
@@ -19,7 +19,7 @@
         <div class="card-body">
             <div>
                 <a href="{{route('jadwal.create')}}" class="btn btn-primary">+ Tambah Data</a>
-                <a href="\reportdosen" rel="noopener" target="_blank" class="btn btn-secondary"><i class="fas fa-print"></i>
+                <a href="{{route('jadwal.exportpdf')}}" rel="noopener" target="_blank" class="btn btn-secondary"><i class="fas fa-print"></i>
                     Print</a>
             </div>
 
@@ -33,8 +33,8 @@
             <thead>
                 <tr>
                     <th >No</th>
-                    <th >Judul Kegiatan</th>
-                    <th >Nama Penanggungjawab</th>
+                    <th >Nama Kegiatan</th>
+                    <th >Penanggung Jawab</th>
                     <th >Tanggal</th>
                     <th >Waktu</th>
                     <th >Action</th>

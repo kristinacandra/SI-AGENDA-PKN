@@ -4,11 +4,11 @@
 @section('header')
     <div class="row mb-2 mx-2 justify-content-between">
         <div class="col-sm-5">
-            <h1>Data Agenda</h1>
+            <h1>Data Agenda Eksternal</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item active">Daftar Agenda</li>
+                <li class="breadcrumb-item active">Daftar Agenda Eksternal</li>
             </ol>
         </div>
     </div>
@@ -19,7 +19,7 @@
         <div class="card-body">
             <div>
                 <a href="{{route('agenda.create')}}" class="btn btn-primary">+ Tambah Data</a>
-                <a href="\reportdosen" rel="noopener" target="_blank" class="btn btn-secondary"><i class="fas fa-print"></i>
+                <a href="{{route('agenda.exportpdf')}}" rel="noopener" target="_blank" class="btn btn-secondary"><i class="fas fa-print"></i>
                     Print</a>
             </div>
 
@@ -33,8 +33,8 @@
             <thead>
                 <tr>
                     <th >No</th>
-                    <th >Nomor Surat Undangan</th>
                     <th >Agenda Kegiatan</th>
+                    <th >Nomor Surat</th>
                     <th >Tanggal</th>
                     <th >Waktu</th>
                     <th >Status</th>
@@ -46,8 +46,8 @@
                 @foreach ($data as $item)
                     <tr>
                         <td class="col-1">{{ $i }}</td>
-                        <td class="col-2">{{ $item->Program }}</td>
                         <td class="col-2">{{ $item->agenda_kegiatan }}</td>
+                        <td class="col-2">{{ $item->no_surat }}</td>
                         <td class="col-2">{{ $item->tgl_pelaksanaan }}</td>
                         <td class="col-2">{{ $item->waktu_pelaksanaan }}</td>
                         <td class="col-2">{{ $item->status }}</td>

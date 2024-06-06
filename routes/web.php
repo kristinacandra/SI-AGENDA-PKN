@@ -5,6 +5,7 @@ use App\Http\Controllers\DataAgendaController;
 use App\Http\Controllers\DataJadwalController;
 use App\Http\Controllers\DatauserController;
 use App\Http\Controllers\DataPegawaiController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,6 +61,7 @@ Route::post('/agenda/store',[DataAgendaController::class, 'store'])->name( 'agen
 Route::delete('/agenda/destroy/{id}',[DataAgendaController::class, 'destroy'])->name('agenda.destroy');
 Route::get('/agenda/Edit/{id}',[DataAgendaController::class, 'edit'])->name( 'agenda.edit');
 Route::put('/agenda/update/{id}',[DataAgendaController::class, 'update'])->name( 'agenda.update');
+Route::get('/agendareport',[DataAgendaController::class, 'exportpdf'])-> name('agenda.exportpdf');
 
 // jadwal
 Route::get('/jadwal', [DataJadwalController::class,'index'])->name('jadwal');
@@ -68,11 +70,12 @@ Route::post('/jadwal/store',[DataJadwalController::class, 'store'])->name( 'jadw
 Route::delete('/jadwal/destroy/{id}',[DataJadwalController::class, 'destroy'])->name('jadwal.destroy');
 Route::get('/jadwal/Edit/{id}',[DataJadwalController::class, 'edit'])->name( 'jadwal.edit');
 Route::put('/jadwal/update/{id}',[DataJadwalController::class, 'update'])->name( 'jadwal.update');
+Route::get('/jadwalreport',[DataJadwalController::class, 'exportpdf'])-> name('jadwal.exportpdf');
 
-// Route::get('/register',[UserController::class, 'register'])->name('register');
-// Route::post('/register',[UserController::class, 'register_action'])->name('register.action');
-// Route::get('/login',[UserController::class, 'login'])->name('login');
-// Route::post('/login',[UserController::class, 'login_action'])->name('login.action');
+// Route::get('/register',[LoginController::class, 'register'])->name('register');
+// Route::post('/register',[LoginController::class, 'register_action'])->name('register.action');
+Route::get('/login',[LoginController::class, 'login'])->name('login');
+Route::post('/login',[LoginController::class, 'login_action'])->name('login.action');
 
 
 

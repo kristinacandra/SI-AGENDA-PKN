@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DataAgenda;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 use Illuminate\Support\Facades\Session;
 
 class DataAgendaController extends Controller
@@ -31,7 +32,7 @@ class DataAgendaController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'Program' => 'required',
+            'no_surat' => 'required',
             'agenda_kegiatan' => 'required',
             'tgl_pelaksanaan' => 'required',
             'waktu_pelaksanaan' => 'required',
@@ -64,7 +65,7 @@ class DataAgendaController extends Controller
     public function update(Request $request, string $id)
     {
         $data = $request->validate([
-            'Program' => 'required',
+            'no_surat' => 'required',
             'agenda_kegiatan' => 'required',
             'tgl_pelaksanaan' => 'required',
             'waktu_pelaksanaan' => 'required',
@@ -82,5 +83,12 @@ class DataAgendaController extends Controller
     {
         DataAgenda::where('id',$id)->delete();
         return redirect()->route('agenda')->with('success', 'Berhasil Melakukan Delete Data');
+    }
+
+    public function exportpdf(){
+        $data = DataAgenda::all();
+        view()->share('data', $data);
+        $pdf = FacadePdf::loadview('dashboard.DataAgenda.report');
+        return $pdf->stream('DataAgenda.pdf');
     }
 }

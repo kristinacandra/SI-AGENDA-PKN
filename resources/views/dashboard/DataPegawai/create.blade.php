@@ -17,17 +17,17 @@
     @csrf
     <div class="mb-3">
         <label for="" class="form-label">Nama</label>
-        <input type="string" class="form-control form-control-sm" name="nama" id="nama" placeholder="nama"
+        <input type="string" class="form-control form-control-sm" name="nama" id="nama" placeholder="Nama"
             value="">
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Email</label>
-        <input type="string" class="form-control form-control-sm" name="email" id="email" placeholder="email"
+        <input type="string" class="form-control form-control-sm" name="email" id="email" placeholder="Email"
             value="">
     </div>
     <div class="mb-3">
         <label for="" class="form-label">No.HP</label>
-        <input type="string" class="form-control form-control-sm" name="no_hp" id="no_hp" placeholder="no_hp"
+        <input type="string" class="form-control form-control-sm" name="no_hp" id="no_hp" placeholder="No HP"
             value="">
     </div>
     <a href="{{route('pegawai')}}" class="btn btn-secondary">Kembali</a>

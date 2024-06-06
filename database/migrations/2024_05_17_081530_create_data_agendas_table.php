@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('data_agenda', function (Blueprint $table) {
             $table->id();
-            $table->string('Program'); 
-            $table->string('agenda_kegiatan'); 
-            $table->string('tgl_pelaksanaan'); 
-            $table->string('waktu_pelaksanaan'); 
-            $table->string('status'); 
+            $table->string('no_surat');
+            $table->string('agenda_kegiatan');
+            $table->string('tgl_pelaksanaan');
+            $table->string('waktu_pelaksanaan');
+            $table->string('status');
             $table->timestamps();
         });
     }

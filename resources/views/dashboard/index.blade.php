@@ -62,7 +62,7 @@
                 <!-- small box -->
                 <div class="small-box bg-warning">
                     <div class="inner">
-                        <p>Data Agenda</p>
+                        <p>Data Agenda Eksternal</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
@@ -76,7 +76,7 @@
                 <!-- small box -->
                 <div class="small-box bg-danger">
                     <div class="inner">
-                        <p>Data Jadwal</p>
+                        <p>Data Jadwal Kegiatan</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>

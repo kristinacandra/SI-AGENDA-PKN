@@ -2,11 +2,11 @@
 @section('header')
     <div class="row mb-2 mx-2 justify-content-between">
         <div class="col-sm-5">
-            <h1>Tambah Data Jadwal</h1>
+            <h1>Tambah Data Jadwal Kegiatan</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item active">Daftar Jadwal</li>
+                <li class="breadcrumb-item active">Daftar Jadwal Kegiatan</li>
             </ol>
         </div>
     </div>
@@ -21,8 +21,8 @@
             value="">
     </div>
     <div class="mb-3">
-        <label for="" class="form-label">Nama Penanggungjawab</label>
-        <input type="string" class="form-control form-control-sm" name="nama_pj" id="nama_pj" placeholder="Nama Penanggungjawab"
+        <label for="" class="form-label">Penanggung Jawab</label>
+        <input type="string" class="form-control form-control-sm" name="nama_pj" id="nama_pj" placeholder="Penanggung Jawab"
             value="">
     </div>
     <div class="mb-3">

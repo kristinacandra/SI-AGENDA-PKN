@@ -2,11 +2,11 @@
 @section('header')
     <div class="row mb-2 mx-2 justify-content-between">
         <div class="col-sm-5">
-            <h1>Edit Data Jadwal</h1>
+            <h1>Edit Data Jadwal Kegiatan</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item active">Daftar Jadwal</li>
+                <li class="breadcrumb-item active">Daftar Jadwal Kegiatan</li>
             </ol>
         </div>
     </div>
@@ -22,7 +22,7 @@
             value="{{$data->judul_kegiatan}}">
     </div>
     <div class="mb-3">
-        <label for="" class="form-label">Nama Penanggungjawab</label>
+        <label for="" class="form-label">Penanggung Jawab</label>
         <input type="string" class="form-control form-control-sm" name="nama_pj" id="nama_pj" placeholder=""
             value="{{$data->nama_pj}}">
     </div>

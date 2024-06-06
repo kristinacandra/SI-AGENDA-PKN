@@ -2,11 +2,11 @@
 @section('header')
     <div class="row mb-2 mx-2 justify-content-between">
         <div class="col-sm-5">
-            <h1>Tambah Data Agenda</h1>
+            <h1>Tambah Data Agenda Eksternal</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item active">Daftar Agenda</li>
+                <li class="breadcrumb-item active">Daftar Agenda Eksternal</li>
             </ol>
         </div>
     </div>
@@ -16,23 +16,23 @@
 <form action="{{ route('agenda.store') }}" method="POST">
     @csrf
     <div class="mb-3">
-        <label for="" class="form-label">Program</label>
-        <input type="string" class="form-control form-control-sm" name="Program" id="Program" placeholder="Program"
+        <label for="" class="form-label">Agenda Kegiatan</label>
+        <input type="string" class="form-control form-control-sm" name="agenda_kegiatan" id="agenda_kegiatan" placeholder="Agenda Kegiatan"
             value="">
     </div>
     <div class="mb-3">
-        <label for="" class="form-label">Agenda Kegiatan</label>
-        <input type="string" class="form-control form-control-sm" name="agenda_kegiatan" id="agenda_kegiatan" placeholder="agenda_kegiatan"
+        <label for="" class="form-label">Nomor Surat</label>
+        <input type="string" class="form-control form-control-sm" name="no_surat" id="no_surat" placeholder="Nomor Surat"
             value="">
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Tanggal Pelaksanaan</label>
-        <input type="date" class="form-control form-control-sm" name="tgl_pelaksanaan" id="tgl_pelaksanaan" placeholder="tgl_pelaksanaan"
+        <input type="date" class="form-control form-control-sm" name="tgl_pelaksanaan" id="tgl_pelaksanaan" placeholder="Tanggal Pelaksanaan"
             value="">
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Waktu Pelaksanaan</label>
-        <input type="time" class="form-control form-control-sm" name="waktu_pelaksanaan" id="waktu_pelaksanaan" placeholder="waktu_pelaksanaan"
+        <input type="time" class="form-control form-control-sm" name="waktu_pelaksanaan" id="waktu_pelaksanaan" placeholder="Waktu Pelaksanaan"
             value="">
     </div>
     <div class="mb-3">

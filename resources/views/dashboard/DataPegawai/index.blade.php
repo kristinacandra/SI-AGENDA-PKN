@@ -4,7 +4,8 @@
 @section('header')
     <div class="row mb-2 mx-2 justify-content-between">
         <div class="col-sm-5">
-            <h1>Data Admin</h1>
+            <h1>Data Pegawai</h1>
+            <li class="breadcrumb-item active">Daftar pegawai yang menjadi penanggungjawab</li>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

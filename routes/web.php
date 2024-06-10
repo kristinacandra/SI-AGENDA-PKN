@@ -22,9 +22,9 @@ Route::get('/', function () {
     return view('dashboard.index');
 });
 
-// Route::get('/dashboard/DataJadwal', function () {
-//     return view('dashboard.DataJadwal.index');
-// });
+Route::get('/dashboard/DataLaporan', function () {
+    return view('dashboard.DataLaporan.index');
+});
 
 // Route::get('/dashboard/DataPegawai', function () {
 //     return view('dashboard.DataPegawai.index');
@@ -72,10 +72,13 @@ Route::get('/jadwal/Edit/{id}',[DataJadwalController::class, 'edit'])->name( 'ja
 Route::put('/jadwal/update/{id}',[DataJadwalController::class, 'update'])->name( 'jadwal.update');
 Route::get('/jadwalreport',[DataJadwalController::class, 'exportpdf'])-> name('jadwal.exportpdf');
 
+//laporan
+
+
 // Route::get('/register',[LoginController::class, 'register'])->name('register');
 // Route::post('/register',[LoginController::class, 'register_action'])->name('register.action');
-Route::get('/login',[LoginController::class, 'login'])->name('login');
-Route::post('/login',[LoginController::class, 'login_action'])->name('login.action');
+// Route::get('/login',[LoginController::class, 'login'])->name('login');
+// Route::post('/login',[LoginController::class, 'login_action'])->name('login.action');
 
 
 

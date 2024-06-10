@@ -27,7 +27,7 @@
         </style>
     </head>
 <body>
-    <h1 style="text-align: center;">DATA ADMIN</h1>
+    <h1 style="text-align: center;">DATA PEGAWAI</h1>
     <table id="customers">
         <thead>
             <tr>

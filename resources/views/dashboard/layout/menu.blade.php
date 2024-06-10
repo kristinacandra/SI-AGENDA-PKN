@@ -55,7 +55,7 @@
                     <a href="{{route('pegawai')}}" class="nav-link">
                         <i class="nav-icon far fa-list-alt"></i>
                         <p>
-                            Data Admin
+                            Data Pegawai
                         </p>
                     </a>
                 </li>

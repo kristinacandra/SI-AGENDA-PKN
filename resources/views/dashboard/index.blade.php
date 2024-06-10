@@ -90,7 +90,7 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <p>Data Admin</p>
+                        <p>Data Pegawai</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>

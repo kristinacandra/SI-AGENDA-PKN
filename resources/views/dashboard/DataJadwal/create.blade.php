@@ -20,20 +20,17 @@
         <input type="string" class="form-control form-control-sm" name="judul_kegiatan" id="judul_kegiatan" placeholder="Judul Kegiatan"
             value="">
     </div>
-    {{-- <div class="mb-3">
+
+    <div class="col-mb-3">
         <label for="" class="form-label">Penanggung Jawab</label>
-        <input type="string" class="form-control form-control-sm" name="nama_pj" id="nama_pj" placeholder="Penanggung Jawab"
-            value="">
-    </div> --}}
-    <div class="mb-3">
-        <label for="" class="form-label">Penangggung Jawab</label>
-        <select name="status" class="form-control">
-            <option value="">--- Pilih Pegawai ---</option>
-            <option value="Belum Dilaksankan">Belum Dilaksankan</option>
-            <option value="Sedang Dilaksankan">Sedang Dilaksankan</option>
-            <option value="Sudah Dilaksankan">Sudah Dilaksankan</option>
+        <select name="id_pegawai" class="form-control">
+            <option class="disable" value="">---Pilih Pegawai---</option>
+            @foreach ($pegawai as $data)
+                <option value="{{ $data->id }}">{{ $data->nama }}</option>
+            @endforeach
         </select>
-    </div>
+        </div>
+
     <div class="mb-3">
         <label for="" class="form-label">Tanggal</label>
         <input type="date" class="form-control form-control-sm" name="tanggal" id="tanggal" placeholder="Tanggal"

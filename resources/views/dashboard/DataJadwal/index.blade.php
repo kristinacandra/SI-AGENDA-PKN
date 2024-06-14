@@ -47,7 +47,7 @@
                     <tr>
                         <td class="col-1">{{ $i }}</td>
                         <td class="col-2">{{ $item->judul_kegiatan }}</td>
-                        <td class="col-2">{{ $item->nama_pj }}</td>
+                        <td class="col-2">{{ $item->pegawai->nama }}</td>
                         <td class="col-2">{{ $item->tanggal }}</td>
                         <td class="col-2">{{ $item->waktu }}</td>
                         <td class="col-2">

@@ -17,8 +17,6 @@
                         </p>
                     </a> --}}
                 </li>
-
-
                 <li class="nav-item">
                     <a href="{{route('agenda')}}" class="nav-link">
                         <i class="nav-icon far fa-file-alt"></i>
@@ -35,16 +33,8 @@
                         </p>
                     </a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a href="/dashboard/datasub" class="nav-link">
-                        <i class="nav-icon far fa-file-alt"></i>
-                        <p>
-                            Data Sub Kriteria
-                        </p>
-                    </a>
-                </li> --}}
                 <li class="nav-item">
-                    <a href="/dashboard/DataLaporan" class="nav-link">
+                    <a href="{{route('laporan')}}" class="nav-link">
                         <i class="nav-icon far fa-file-alt"></i>
                         <p>
                             Data Laporan

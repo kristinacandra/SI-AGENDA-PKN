@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('data_pegawai', function (Blueprint $table) {
             $table->id();
-            $table->string('nama'); 
-            $table->string('email'); 
-            $table->string('no_hp'); 
+            $table->string('nama');
+            $table->string('email');
+            $table->string('no_hp');
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('data_pegawais');
+        Schema::dropIfExists('data_pegawai');
     }
 };

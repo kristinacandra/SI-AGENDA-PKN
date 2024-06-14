@@ -32,7 +32,7 @@
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Waktu Pelaksanaan</label>
-        <input type="time" class="form-control form-control-sm" name="waktu_pelaksanaan" id="waktu_pelaksanaan" placeholder="Waktu Pelaksanaan"
+        <input type="time" class="form-control form-control-sm" name="waktu_pelaksanaan" id="waktu_pelaksanaan" placeholder=""
             value="">
     </div>
     <div class="mb-3">

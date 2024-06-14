@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('data_agendas');
+        Schema::dropIfExists('data_agenda');
     }
 };

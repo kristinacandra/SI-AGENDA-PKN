@@ -15,5 +15,12 @@ class DataJadwal extends Model
         'nama_pj',
         'tanggal',
         'waktu',
+        'id_pegawai',
     ];
+
+    public function pegawai()
+    {
+        return $this->belongsTo(DataPegawai::class,'id_pegawai','id');
+    }
+
 }

@@ -15,4 +15,8 @@ class DataPegawai extends Model
         'email',
         'no_hp',
     ];
+
+   public function DataJadwal(){
+    return $this->hasMany(DataJadwal::class);
+   }
 }

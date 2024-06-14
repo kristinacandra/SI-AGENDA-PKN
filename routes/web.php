@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataAgendaController;
 use App\Http\Controllers\DataJadwalController;
+use App\Http\Controllers\DataLaporanController;
 use App\Http\Controllers\DatauserController;
 use App\Http\Controllers\DataPegawaiController;
 use App\Http\Controllers\LoginController;
@@ -22,20 +23,10 @@ Route::get('/', function () {
     return view('dashboard.index');
 });
 
-Route::get('/dashboard/DataLaporan', function () {
-    return view('dashboard.DataLaporan.index');
-});
-
-// Route::get('/dashboard/DataPegawai', function () {
-//     return view('dashboard.DataPegawai.index');
-// });
-
-// Route::get('/dashboard/DataAgenda', function () {
-//     return view('dashboard.DataAgenda.index');
-// });
 // Route::get('/dashboard/DataLaporan', function () {
 //     return view('dashboard.DataLaporan.index');
 // });
+
 //user
 Route::get('/user', [DatauserController::class,'index'])->name('user');
 Route::get('/user/create',[DatauserController::class, 'create'])->name( 'user.create');
@@ -69,11 +60,17 @@ Route::get('/jadwal/create',[DataJadwalController::class, 'create'])->name( 'jad
 Route::post('/jadwal/store',[DataJadwalController::class, 'store'])->name( 'jadwal.store');
 Route::delete('/jadwal/destroy/{id}',[DataJadwalController::class, 'destroy'])->name('jadwal.destroy');
 Route::get('/jadwal/Edit/{id}',[DataJadwalController::class, 'edit'])->name( 'jadwal.edit');
-Route::put('/jadwal/update/{id}',[DataJadwalController::class, 'update'])->name( 'jadwal.update');
+Route::put('/jadwal/update/{id}', [DataJadwalController::class, 'update'])->name('jadwal.update');
 Route::get('/jadwalreport',[DataJadwalController::class, 'exportpdf'])-> name('jadwal.exportpdf');
 
 //laporan
-
+Route::get('/laporan', [DataLaporanController::class,'index'])->name('laporan');
+Route::get('/laporan/create',[DataLaporanController::class, 'create'])->name( 'laporan.create');
+Route::post('/laporan/store',[DataLaporanController::class, 'store'])->name( 'laporan.store');
+Route::delete('/laporan/destroy/{id}',[DataLaporanController::class, 'destroy'])->name('laporan.destroy');
+Route::get('/laporan/Edit/{id}',[DataLaporanController::class, 'edit'])->name( 'laporan.edit');
+Route::put('/laporan/update/{id}', [DataLaporanController::class, 'update'])->name('laporan.update');
+Route::get('/laporanreport',[DataLaporanController::class, 'exportpdf'])-> name('laporan.exportpdf');
 
 // Route::get('/register',[LoginController::class, 'register'])->name('register');
 // Route::post('/register',[LoginController::class, 'register_action'])->name('register.action');

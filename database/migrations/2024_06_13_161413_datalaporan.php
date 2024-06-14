@@ -11,7 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('data_agenda', function (Blueprint $table) {
+        Schema::create('datalaporan', function (Blueprint $table) {
+            $table->id();
+            $table->string('tanggal');
+            $table->string('nama');
+            $table->string('acara');
+            $table->string('lokasi');
+            $table->timestamps();
         });
     }
 
@@ -20,8 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('data_agenda', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('datalaporan');
     }
 };

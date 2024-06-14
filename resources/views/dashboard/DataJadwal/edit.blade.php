@@ -22,9 +22,15 @@
             value="{{$data->judul_kegiatan}}">
     </div>
     <div class="mb-3">
-        <label for="" class="form-label">Penanggung Jawab</label>
-        <input type="string" class="form-control form-control-sm" name="nama_pj" id="nama_pj" placeholder=""
-            value="{{$data->nama_pj}}">
+        <label for="id_pegawai" class="form-label">Pegawai</label>
+        <select name="id_pegawai" class="form-control">
+            <option class="disable" value="">---Pilih Pegawai---</option>
+            @foreach ($pegawai as $item)
+                <option value="{{ $item->id }}" {{ $item->id == $data->id_pegawai ? 'selected' : '' }}>
+                    {{ $item->nama }}
+                </option>
+            @endforeach
+        </select>
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Tanggal</label>

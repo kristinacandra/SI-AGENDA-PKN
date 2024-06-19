@@ -18,6 +18,12 @@ class DataAgendaController extends Controller
         return view('dashboard.DataAgenda.index',compact('data')) ;
     }
 
+    public function indexLurah()
+    {
+        $data = DataAgenda:: all();
+        return view('lurah.DataAgenda.index',compact('data')) ;
+    }
+
     /**
      * Show the form for creating a new resource.
      */

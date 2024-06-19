@@ -17,6 +17,12 @@ class DataLaporanController extends Controller
         return view('dashboard.DataLaporan.index', compact('data'));
     }
 
+    public function indexLurah()
+    {
+        $data = datalaporan :: all();
+        return view('lurah.DataLaporan.index', compact('data'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */

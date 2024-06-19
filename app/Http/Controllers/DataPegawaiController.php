@@ -18,6 +18,12 @@ class DataPegawaiController extends Controller
         return view('dashboard.DataPegawai.index')->with('data',$data);
     }
 
+    public function indexLurah()
+    {
+        $data = DataPegawai :: all();
+        return view('lurah.DataPegawai.index')->with('data',$data);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

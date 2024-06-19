@@ -23,9 +23,9 @@ Route::get('/', function () {
     return view('dashboard.index');
 });
 
-// Route::get('/dashboard/DataLaporan', function () {
-//     return view('dashboard.DataLaporan.index');
-// });
+Route::get('/lurah', function () {
+    return view('lurah.index');
+});
 
 //user
 Route::get('/user', [DatauserController::class,'index'])->name('user');
@@ -44,6 +44,7 @@ Route::delete('/pegawai/destroy/{id}',[DataPegawaiController::class, 'destroy'])
 Route::get('/pegawai/Edit/{id}',[DataPegawaiController::class, 'edit'])->name( 'pegawai.edit');
 Route::put('/pegawai/update/{id}',[DataPegawaiController::class, 'update'])->name( 'pegawai.update');
 Route::get('/pegawaireport',[DataPegawaiController::class, 'exportpdf'])-> name('pegawai.exportpdf');
+Route::get('lurah/pegawai', [DataPegawaiController::class,'indexLurah'])->name('LurahPegawai');
 
 //agenda
 Route::get('/agenda', [DataAgendaController::class,'index'])->name('agenda');
@@ -53,6 +54,7 @@ Route::delete('/agenda/destroy/{id}',[DataAgendaController::class, 'destroy'])->
 Route::get('/agenda/Edit/{id}',[DataAgendaController::class, 'edit'])->name( 'agenda.edit');
 Route::put('/agenda/update/{id}',[DataAgendaController::class, 'update'])->name( 'agenda.update');
 Route::get('/agendareport',[DataAgendaController::class, 'exportpdf'])-> name('agenda.exportpdf');
+Route::get('lurah/DataAgenda', [DataAgendaController::class,'indexLurah'])->name('LurahAgenda');
 
 // jadwal
 Route::get('/jadwal', [DataJadwalController::class,'index'])->name('jadwal');
@@ -62,6 +64,7 @@ Route::delete('/jadwal/destroy/{id}',[DataJadwalController::class, 'destroy'])->
 Route::get('/jadwal/Edit/{id}',[DataJadwalController::class, 'edit'])->name( 'jadwal.edit');
 Route::put('/jadwal/update/{id}', [DataJadwalController::class, 'update'])->name('jadwal.update');
 Route::get('/jadwalreport',[DataJadwalController::class, 'exportpdf'])-> name('jadwal.exportpdf');
+Route::get('/lurah/DataJadwal', [DataJadwalController::class,'indexLurah'])->name('LurahJadwal');
 
 //laporan
 Route::get('/laporan', [DataLaporanController::class,'index'])->name('laporan');
@@ -71,11 +74,9 @@ Route::delete('/laporan/destroy/{id}',[DataLaporanController::class, 'destroy'])
 Route::get('/laporan/Edit/{id}',[DataLaporanController::class, 'edit'])->name( 'laporan.edit');
 Route::put('/laporan/update/{id}', [DataLaporanController::class, 'update'])->name('laporan.update');
 Route::get('/laporanreport',[DataLaporanController::class, 'exportpdf'])-> name('laporan.exportpdf');
+Route::get('lurah/laporan', [DataLaporanController::class,'indexLurah'])->name('LurahLaporan');
 
-// Route::get('/register',[LoginController::class, 'register'])->name('register');
-// Route::post('/register',[LoginController::class, 'register_action'])->name('register.action');
-// Route::get('/login',[LoginController::class, 'login'])->name('login');
-// Route::post('/login',[LoginController::class, 'login_action'])->name('login.action');
-
-
-
+Route::get('/register',[LoginController::class, 'register'])->name('register');
+Route::post('/register',[LoginController::class, 'register_action'])->name('register.action');
+Route::get('/login',[LoginController::class, 'login'])->name('login');
+Route::post('/login',[LoginController::class, 'login_action'])->name('login.action');

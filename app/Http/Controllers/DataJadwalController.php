@@ -18,6 +18,12 @@ class DataJadwalController extends Controller
         return view('dashboard.DataJadwal.index',compact('data','pegawai')) ;
     }
 
+    public function indexLurah(){
+        $data = DataJadwal:: all();
+        $pegawai = DataPegawai::all();
+        return view('lurah.DataJadwal.index',compact('data','pegawai')) ;
+    }
+
     /**
      * Show the form for creating a new resource.
      */

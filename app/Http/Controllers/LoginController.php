@@ -14,14 +14,14 @@ class LoginController extends Controller
 
     public function index()
     {
-        $data = User::all();
-        return view('dashboard.datauser.index', compact('data'));
+        // $data = User::all();
+        return view('Auth.login');
     }
 
     public function register()
     {
         $data['title'] = 'Register';
-        return view('user/register',$data);
+        return view('/register',$data);
     }
 
     public function register_action(Request $request)

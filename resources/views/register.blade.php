@@ -17,8 +17,8 @@
                     <input class="form-control" type="text" name="name" value="{{old('name')}}" />
                 </div>
                 <div class = "mb-3">
-                    <label>Username <span class="text-danger">*</span></label>
-                    <input class="form-control" type="text" name="username" value="{{old('username')}}" />
+                    <label>Email <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text" name="email" value="{{old('email')}}" />
                 </div>
                 <div class = "mb-3">
                     <label>Password <span class="text-danger">*</span></label>
@@ -30,10 +30,10 @@
                 </div>
                 <div class = "mb-3">
                     <button class="btn btn-warning">Register</button>
-                    <a class="btn btn-danger" href="{{route('home')}}">Back</a>
+                    <a class="btn btn-danger" href="/">Back</a>
                 </div>
             </div>
-        </form> 
+        </form>
     </div>
 </div>
 @endsection

@@ -42,7 +42,7 @@
             value="">
     </div>
 
-    <a href="{{route('agenda')}}" class="btn btn-secondary">Kembali</a>
+    <a href="{{route('jadwal')}}" class="btn btn-secondary">Kembali</a>
     <button class="btn btn-primary" name="simpan" type="submit">SIMPAN</button>
 </form>
 @endsection

@@ -18,14 +18,12 @@ class LoginController extends Controller
         return view('Auth.login');
     }
 
-    public function register()
-    {
+    public function register(){
         $data['title'] = 'Register';
         return view('/register',$data);
     }
 
-    public function register_action(Request $request)
-    {
+    public function register_action(Request $request){
         $request->validate([
             'name' => 'required',
             'email' => 'required|unique:user',
@@ -50,7 +48,7 @@ class LoginController extends Controller
     public function login()
     {
         $data['title'] = 'Login';
-        return view('login',$data);
+        return view('Auth.login',$data);
     }
 
     public function login_action(Request $request)
@@ -62,9 +60,9 @@ class LoginController extends Controller
             'email.required' => 'Email Wajib Diisi!',
             'password.required' => 'Password Wajib Diisi!',
         ]);
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+        if(Auth::attempt($request->only('email','password'))){
             $request->session()->regenerate();
-            return redirect()->intended('/');
+            return redirect()->intended('/home');
         }
         return back()->withErrors([
             'password' => 'Password atau email Salah!',
@@ -76,7 +74,7 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/');
+        return redirect('/login');
     }
 
     public function create()

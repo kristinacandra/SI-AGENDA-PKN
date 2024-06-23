@@ -1,6 +1,7 @@
 @extends('dashboard.layout.dash-layout')
 @section('title', 'Beranda')
 
+@if (auth()->user()->level== "admin")
 
 @section('header')
     <div class="row mb-2 mx-2 justify-content-between">
@@ -102,3 +103,4 @@
         </div>
     </section>
 @endsection
+@endif

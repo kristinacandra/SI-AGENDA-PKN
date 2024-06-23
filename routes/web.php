@@ -18,14 +18,27 @@ use App\Http\Controllers\LoginController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
-    return view('dashboard.index');
+    return view('welcome');
 });
 
-Route::get('/lurah', function () {
-    return view('lurah.index');
+
+Route::get('/login',[LoginController::class, 'login'])->name('login');
+Route::post('/postlogin',[LoginController::class, 'login_action'])->name('login.action');
+Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
+
+Route::group(['middleware' => ['auth','ceklevel:admin']], function () {
+    Route::get('/home', function () {
+        return view('dashboard.index');
+    });
 });
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/lurah', function () {
+        return view('lurah.index');
+    });
+});
+
 
 //user
 Route::get('/user', [DatauserController::class,'index'])->name('user');
@@ -76,7 +89,7 @@ Route::put('/laporan/update/{id}', [DataLaporanController::class, 'update'])->na
 Route::get('/laporanreport',[DataLaporanController::class, 'exportpdf'])-> name('laporan.exportpdf');
 Route::get('lurah/laporan', [DataLaporanController::class,'indexLurah'])->name('LurahLaporan');
 
-Route::get('/register',[LoginController::class, 'register'])->name('register');
-Route::post('/register',[LoginController::class, 'register_action'])->name('register.action');
+// Route::get('/register',[LoginController::class, 'register'])->name('register');
+// Route::post('/register',[LoginController::class, 'register_action'])->name('register.action');
 Route::get('/login',[LoginController::class, 'login'])->name('login');
 Route::post('/login',[LoginController::class, 'login_action'])->name('login.action');

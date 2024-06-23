@@ -17,15 +17,15 @@
             @csrf
                 <div class="mb-3">
                     <label>Email <span class="text-danger">*</span></label>
-                    <input class="form-control" type="username" name="username" value="{{ old('username') }}" />
+                    <input class="form-control" type="email" name="email" placeholder="Email" />
                 </div>
                 <div class="mb-3">
                     <label>Password <span class="text-danger">*</span></label>
-                    <input class="form-control" type="password" name="password" />
+                    <input class="form-control" type="password" name="password" placeholder="Password" />
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-primary" href='/'>Login</button>
-                    <a class="btn btn-danger" href="/register">Register</a>
+                    <button class="btn btn-primary" href='{{ route('login') }}'>Login</button>
+                    {{-- <a class="btn btn-danger" href="/register">Register</a> --}}
                 </div>
             </div>
         </form>

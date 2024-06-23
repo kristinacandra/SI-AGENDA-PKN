@@ -10,10 +10,8 @@ class datauser extends Model
     use HasFactory;
     protected $table = "datausers";
     protected $fillable =[
-        'id',
         'nama',
-        'nohp',
-        'role',
-        'email'
+        'email',
+        'password',
     ];
 }

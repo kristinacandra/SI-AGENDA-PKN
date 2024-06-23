@@ -63,6 +63,7 @@ class LoginController extends Controller
         if(Auth::attempt($request->only('email','password'))){
             $request->session()->regenerate();
             return redirect()->intended('/home');
+            return redirect()->intended('/lurah');
         }
         return back()->withErrors([
             'password' => 'Password atau email Salah!',

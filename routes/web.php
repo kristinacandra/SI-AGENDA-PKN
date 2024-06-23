@@ -33,6 +33,10 @@ Route::group(['middleware' => ['auth','ceklevel:admin']], function () {
     });
 });
 
+// Route::get('/lurah', function () {
+//     return view('lurah.index');
+// });
+
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/lurah', function () {
         return view('lurah.index');

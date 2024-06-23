@@ -1,6 +1,7 @@
 @extends('lurah.layout.dash-layout')
 @section('title', 'Beranda')
 
+@if (auth()->user()->level== "lurah")
 
 @section('header')
     <div class="row mb-2 mx-2 justify-content-between">
@@ -102,3 +103,5 @@
         </div>
     </section>
 @endsection
+@endif
+

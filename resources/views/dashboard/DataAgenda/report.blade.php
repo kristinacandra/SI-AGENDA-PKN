@@ -38,7 +38,6 @@
                 <th >Nama</th>
                 <th >Lokasi</th>
                 <th >Status</th>
-                <th >Status</th>
             </tr>
         </thead>
           <tbody>

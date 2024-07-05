@@ -38,6 +38,7 @@
                     <th >Nama</th>
                     <th >Agenda Kegiatan</th>
                     <th >Lokasi</th>
+                    <th >Deskripsi</th>
                     <th >Action</th>
                 </tr>
             </thead>
@@ -50,6 +51,7 @@
                         <td class="col-2">{{ $item->nama}}</td>
                         <td class="col-2">{{ $item->acara }}</td>
                         <td class="col-2">{{ $item->lokasi }}</td>
+                        <td class="col-2">{{ $item->deskripsi }}</td>
                         <td class="col-2">
                             <a href="{{ route('report.cetak', $item->id) }}" class="btn btn-warning">Cetak</a>
                         </td>

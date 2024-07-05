@@ -21,7 +21,7 @@
             <div>
                 <a href="{{route('jadwal.create')}}" class="btn btn-primary">+ Tambah Data</a>
                 <a href="{{route('jadwal.exportpdf')}}" rel="noopener" target="_blank" class="btn btn-secondary"><i class="fas fa-print"></i>
-                    Print</a>
+                    Cetak Semua Data</a>
             </div>
 
         </div>

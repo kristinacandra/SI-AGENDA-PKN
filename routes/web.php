@@ -95,7 +95,7 @@ Route::get('/laporan/Edit/{id}',[DataLaporanController::class, 'edit'])->name( '
 Route::put('/laporan/update/{id}', [DataLaporanController::class, 'update'])->name('laporan.update');
 Route::get('/laporanreport',[DataLaporanController::class, 'exportpdf'])-> name('laporan.exportpdf');
 Route::get('lurah/laporan', [DataLaporanController::class,'indexLurah'])->name('LurahLaporan');
-Route::get('/report/{id}', [DataLaporanController::class, 'cetak'])->name('report.cetak');
+Route::get('report/{id}', [DataLaporanController::class, 'cetak'])->name('report.cetak');
 
 
 // Route::get('/register',[LoginController::class, 'register'])->name('register');

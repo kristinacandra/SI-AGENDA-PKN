@@ -103,6 +103,6 @@ class DataLaporanController extends Controller
         $kegiatan = datalaporan::findOrFail($id);
         view()->share('kegiatan', $kegiatan);
         $pdf = FacadePdf::loadview('lurah.DataLaporan.report', compact('kegiatan'));
-        return $pdf->download('DataLaporan.pdf');
+        return $pdf->download('DataLaporanKegiatan-'.$kegiatan->id.'.pdf');
     }
 }

@@ -21,7 +21,7 @@
             <div>
                 <a href="{{route('laporan.create')}}" class="btn btn-primary">+ Tambah Data</a>
                 <a href="{{route('laporan.exportpdf')}}" rel="noopener" target="_blank" class="btn btn-secondary"><i class="fas fa-print"></i>
-                    Print</a>
+                    Cetak Semua Data</a>
             </div>
 
         </div>
@@ -38,8 +38,9 @@
                     <th >Nama</th>
                     <th >Agenda Kegiatan</th>
                     <th >Lokasi</th>
-                    <th>Deskripsi</th>
+                    <th >Deskripsi</th>
                     <th >Action</th>
+                    <th >Cetak</th>
                 </tr>
             </thead>
             <tbody>
@@ -63,6 +64,9 @@
                                 Del
                               </button>
                           </form>
+                        </td>
+                        <td class="col-2">
+                            <a href="{{ route('report.cetak', $item->id) }}" class="btn btn-warning">Cetak</a>
                         </td>
                     </tr>
                     <?php $i++; ?>

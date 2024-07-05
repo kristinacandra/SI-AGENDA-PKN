@@ -21,7 +21,7 @@
             <div>
                 <a href="{{route('pegawai.create')}}" class="btn btn-primary">+ Tambah Data</a>
                 <a href="{{route('pegawai.exportpdf')}}" rel="noopener" target="_blank" class="btn btn-secondary"><i class="fas fa-print"></i>
-                    Print</a>
+                    Cetak Semua Data</a>
             </div>
 
         </div>

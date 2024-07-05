@@ -37,8 +37,8 @@
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Deskripsi</label>
-        <textarea type="string" class="form-control form-control-sm" rows="5" name="deskripsi" id="deskripsi" placeholder="Deskripsi"
-            value=""></textarea>
+        <input type="string" class="form-control form-control-sm" rows="5" name="deskripsi" id="deskripsi" placeholder="Deskripsi"
+            value="">
     </div>
 
     <a href="{{route('laporan')}}" class="btn btn-secondary">Kembali</a>

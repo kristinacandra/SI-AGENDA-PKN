@@ -27,14 +27,19 @@
             value="{{$data->no_surat}}">
     </div>
     <div class="mb-3">
-        <label for="" class="form-label">Tanggal Pelaksanaan</label>
-        <input type="date" class="form-control form-control-sm" name="tgl_pelaksanaan" id="tgl_pelaksanaan" placeholder=""
-            value="{{$data->tgl_pelaksanaan}}">
+        <label for="" class="form-label">Waktu Pelaksanaan</label>
+        <input type="datetime-local" class="form-control form-control-sm" name="waktu_pelaksanaan" id="waktu_pelaksanaan" placeholder=""
+            value="{{$data->waktu_pelaksanaan}}">
     </div>
     <div class="mb-3">
-        <label for="" class="form-label">Waktu Pelaksanaan</label>
-        <input type="time" class="form-control form-control-sm" name="waktu_pelaksanaan" id="waktu_pelaksanaan" placeholder=""
-            value="{{$data->waktu_pelaksanaan}}">
+        <label for="" class="form-label">Nama</label>
+        <input type="string" class="form-control form-control-sm" name="nama" id="nama" placeholder=""
+            value="{{$data->nama}}">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Lokasi</label>
+        <input type="string" class="form-control form-control-sm" name="lokasi" id="lokasi" placeholder=""
+            value="{{$data->lokasi}}">
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Status</label>

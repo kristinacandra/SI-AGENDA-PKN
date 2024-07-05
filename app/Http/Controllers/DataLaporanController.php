@@ -41,6 +41,7 @@ class DataLaporanController extends Controller
             'nama' => 'required',
             'acara' => 'required',
             'lokasi' => 'required',
+            'deskripsi' => 'required',
         ]);
         datalaporan::create($data);
         return redirect()->route('laporan')->with('success', 'Berhasil Melakukan Tambah Data');
@@ -49,10 +50,13 @@ class DataLaporanController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
-        //
-    }
+    // public function show($id)
+    // {
+    //     $kegiatan = datalaporan::findOrFail($id);
+    //     view()->share('kegiatan', $kegiatan);
+    //     $pdf = FacadePdf::loadview('lurah.DataLaporan.report', compact('kegiatan'));
+    //     return $pdf->download('kegiatan-'.$kegiatan->id.'.pdf');
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -73,6 +77,7 @@ class DataLaporanController extends Controller
             'nama' => 'required',
             'acara' => 'required',
             'lokasi' => 'required',
+            'deskripsi' => 'required',
         ]);
         datalaporan::where('id',$id)->update($data);
         return redirect()->route('laporan')->with('success', 'Berhasil Melakukan Update Data');
@@ -84,13 +89,20 @@ class DataLaporanController extends Controller
     public function destroy(string $id)
     {
         datalaporan::where('id',$id)->delete();
-        return redirect()->route('lpaoran')->with('success', 'Berhasil Melakukan Delete Data');
+        return redirect()->route('laporan')->with('success', 'Berhasil Melakukan Delete Data');
     }
 
     public function exportpdf(){
         $data = datalaporan::all();
         view()->share('data', $data);
         $pdf = FacadePdf::loadview('dashboard.DataLaporan.report');
-        return $pdf->stream('DataLaporan.pdf');
+        return $pdf->download('DataLaporan.pdf');
+    }
+
+    public function cetak($id){
+        $kegiatan = datalaporan::findOrFail($id);
+        view()->share('kegiatan', $kegiatan);
+        $pdf = FacadePdf::loadview('lurah.DataLaporan.report', compact('kegiatan'));
+        return $pdf->download('DataLaporan.pdf');
     }
 }

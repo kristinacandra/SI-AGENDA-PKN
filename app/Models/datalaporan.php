@@ -14,5 +14,6 @@ class datalaporan extends Model
         'nama',
         'acara',
         'lokasi',
+        'deskripsi',
     ];
 }

@@ -1,7 +1,7 @@
 @extends('lurah.layout.dash-layout')
 @section('title', 'Beranda')
 
-@if (auth()->user()->level== "lurah")
+@if (auth()->user()->level == "lurah")
 
 @section('header')
     <div class="row mb-2 mx-2 justify-content-between">
@@ -68,7 +68,7 @@
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
                     </div>
-                    <a href="{{route('LurahAgenda')}}" class="small-box-footer">More info <i
+                    <a href="{{route('agenda')}}" class="small-box-footer">More info <i
                             class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
@@ -82,7 +82,7 @@
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>
                     </div>
-                    <a href="{{route('LurahJadwal')}}" class="small-box-footer">More info <i
+                    <a href="{{route('jadwal')}}" class="small-box-footer">More info <i
                             class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
@@ -96,7 +96,7 @@
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>
                     </div>
-                    <a href="{{route('LurahPegawai')}}" class="small-box-footer">More info <i
+                    <a href="{{route('pegawai')}}" class="small-box-footer">More info <i
                             class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
@@ -104,4 +104,5 @@
     </section>
 @endsection
 @endif
+
 

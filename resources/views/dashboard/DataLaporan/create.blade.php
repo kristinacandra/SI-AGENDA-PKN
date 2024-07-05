@@ -35,6 +35,11 @@
         <input type="string" class="form-control form-control-sm" name="lokasi" id="lokasi" placeholder="Lokasi"
             value="">
     </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Deskripsi</label>
+        <textarea type="string" class="form-control form-control-sm" rows="5" name="deskripsi" id="deskripsi" placeholder="Deskripsi"
+            value=""></textarea>
+    </div>
 
     <a href="{{route('laporan')}}" class="btn btn-secondary">Kembali</a>
     <button class="btn btn-primary" name="simpan" type="submit">SIMPAN</button>

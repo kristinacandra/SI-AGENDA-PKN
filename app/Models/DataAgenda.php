@@ -13,8 +13,9 @@ class DataAgenda extends Model
         'id',
         'no_surat',
         'agenda_kegiatan',
-        'tgl_pelaksanaan',
+        'nama',
         'waktu_pelaksanaan',
+        'lokasi',
         'status',
     ];
 }

@@ -88,8 +88,8 @@
             <!-- Brand Logo -->
             <a href="/lurah" class="brand-link">
                 <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Kel. Tunjungsekar</span>
+                    class="brand-image img-circle elevation-3" style="opacity: .9">
+                <span class="brand-text font-weight-regular">SIAJUN</span>
             </a>
 
             <!-- Sidebar -->

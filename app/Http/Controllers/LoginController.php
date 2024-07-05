@@ -62,8 +62,14 @@ class LoginController extends Controller
         ]);
         if(Auth::attempt($request->only('email','password'))){
             $request->session()->regenerate();
-            return redirect()->intended('/home');
-            return redirect()->intended('/lurah');
+            // Cek email yang login
+            if ($request->email == 'admin@gmail.com') {
+                return redirect()->intended('/home');
+            } elseif ($request->email == 'lurah@gmail.com') {
+                return redirect()->intended('/lurah');
+            }
+            // Redirect default jika email tidak sesuai dengan yang diinginkan
+            return redirect()->intended('/');
         }
         return back()->withErrors([
             'password' => 'Password atau email Salah!',
@@ -76,30 +82,5 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/login');
-    }
-
-    public function create()
-    {
-        return view('dashboard.DataUser.create');
-    }
-
-    public function store(Request $request)
-    {
-        Session::flash('nama', $request->name);
-        Session::flash('email', $request->email);
-
-        $request->validate([
-            'email'=>'required|unique:dataaslab',
-            'nama'=>'required',
-        ]);
-
-        $data=[
-            'nama'=>$request->name,
-            'email'=>$request->email,
-        ];
-        User::create($data);
-
-        return redirect()->route('datauser.index')->with('success', 'Berhasil Menambahkan Data');
-
     }
 }

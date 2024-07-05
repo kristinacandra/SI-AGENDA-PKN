@@ -92,6 +92,6 @@ class DataJadwalController extends Controller
         $data = DataJadwal::all();
         view()->share('data', $data);
         $pdf = FacadePdf::loadview('dashboard.DataJadwal.report');
-        return $pdf->stream('DataJadwal.pdf');
+        return $pdf->download('DataJadwal.pdf');
     }
 }

@@ -91,7 +91,6 @@ class DataPegawaiController extends Controller
         $data = DataPegawai::all();
         view()->share('data', $data);
         $pdf = FacadePdf::loadview('dashboard.DataPegawai.report');
-        return $pdf->stream('DataPegawai.pdf');
+        return $pdf->download('DataPegawai.pdf');
     }
-
 }

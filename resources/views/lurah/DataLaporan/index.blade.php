@@ -38,7 +38,7 @@
                     <th >Nama</th>
                     <th >Agenda Kegiatan</th>
                     <th >Lokasi</th>
-                    {{-- <th >Action</th> --}}
+                    <th >Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -50,18 +50,9 @@
                         <td class="col-2">{{ $item->nama}}</td>
                         <td class="col-2">{{ $item->acara }}</td>
                         <td class="col-2">{{ $item->lokasi }}</td>
-                        {{-- <td class="col-2">
-                            <a href="{{route('laporan.edit',$item->id)}}" class="btn btn-sm btn-warning">Edit</a>
-                            <form onsubmit="return confirm('Apakah Anda Ingin Menghapus Data Ini?')"
-                              action=" {{ route('laporan.destroy', $item->id) }}"
-                              class="d-inline" method="post">
-                              @csrf
-                              @method('DELETE')
-                              <button class="btn btn-sm btn-danger" type="submit" name="submit">
-                                Del
-                              </button>
-                          </form>
-                        </td> --}}
+                        <td class="col-2">
+                            <a href="{{ route('report.cetak', $item->id) }}" class="btn btn-warning">Cetak</a>
+                        </td>
                     </tr>
                     <?php $i++; ?>
                 @endforeach

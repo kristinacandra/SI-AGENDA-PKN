@@ -40,8 +40,9 @@ class DataAgendaController extends Controller
         $data = $request->validate([
             'no_surat' => 'required',
             'agenda_kegiatan' => 'required',
-            'tgl_pelaksanaan' => 'required',
+            'nama' => 'required',
             'waktu_pelaksanaan' => 'required',
+            'lokasi' => 'required',
             'status' => 'required',
         ]);
         DataAgenda::create($data);
@@ -73,10 +74,10 @@ class DataAgendaController extends Controller
         $data = $request->validate([
             'no_surat' => 'required',
             'agenda_kegiatan' => 'required',
-            'tgl_pelaksanaan' => 'required',
+            'nama' => 'required',
             'waktu_pelaksanaan' => 'required',
+            'lokasi' => 'required',
             'status' => 'required',
-
         ]);
         DataAgenda::where('id',$id)->update($data);
         return redirect()->route('agenda')->with('success', 'Berhasil Melakukan Update Data');
@@ -95,6 +96,6 @@ class DataAgendaController extends Controller
         $data = DataAgenda::all();
         view()->share('data', $data);
         $pdf = FacadePdf::loadview('dashboard.DataAgenda.report');
-        return $pdf->stream('DataAgenda.pdf');
+        return $pdf->download('DataAgenda.pdf');
     }
 }

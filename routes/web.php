@@ -19,7 +19,7 @@ use App\Http\Controllers\LoginController;
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+    return view('Auth.login');
 });
 
 
@@ -32,12 +32,15 @@ Route::group(['middleware' => ['auth','ceklevel:admin']], function () {
         return view('dashboard.index');
     });
 });
+Route::get('/tutor', function () {
+    return view('Auth.tutor');
+});
 
 // Route::get('/lurah', function () {
 //     return view('lurah.index');
 // });
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth','ceklevel:lurah']], function () {
     Route::get('/lurah', function () {
         return view('lurah.index');
     });
@@ -92,6 +95,8 @@ Route::get('/laporan/Edit/{id}',[DataLaporanController::class, 'edit'])->name( '
 Route::put('/laporan/update/{id}', [DataLaporanController::class, 'update'])->name('laporan.update');
 Route::get('/laporanreport',[DataLaporanController::class, 'exportpdf'])-> name('laporan.exportpdf');
 Route::get('lurah/laporan', [DataLaporanController::class,'indexLurah'])->name('LurahLaporan');
+Route::get('/report/{id}', [DataLaporanController::class, 'cetak'])->name('report.cetak');
+
 
 // Route::get('/register',[LoginController::class, 'register'])->name('register');
 // Route::post('/register',[LoginController::class, 'register_action'])->name('register.action');

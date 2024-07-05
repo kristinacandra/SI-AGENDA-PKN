@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('no_surat');
             $table->string('agenda_kegiatan');
-            $table->string('tgl_pelaksanaan');
-            $table->string('waktu_pelaksanaan');
+            $table->date('nama');
+            $table->datetime('waktu_pelaksanaan');
+            $table->date('lokasi');
             $table->string('status');
             $table->timestamps();
         });

@@ -26,13 +26,18 @@
             value="">
     </div>
     <div class="mb-3">
-        <label for="" class="form-label">Tanggal Pelaksanaan</label>
-        <input type="date" class="form-control form-control-sm" name="tgl_pelaksanaan" id="tgl_pelaksanaan" placeholder="Tanggal Pelaksanaan"
+        <label for="" class="form-label">Waktu Pelaksanaan</label>
+        <input type="datetime-local" class="form-control form-control-sm" name="waktu_pelaksanaan" id="waktu_pelaksanaan" placeholder=""
             value="">
     </div>
     <div class="mb-3">
-        <label for="" class="form-label">Waktu Pelaksanaan</label>
-        <input type="time" class="form-control form-control-sm" name="waktu_pelaksanaan" id="waktu_pelaksanaan" placeholder=""
+        <label for="" class="form-label">Nama Pegawai</label>
+        <input type="string" class="form-control form-control-sm" name="nama" id="nama" placeholder="Nama Pegawai"
+            value="">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Lokasi</label>
+        <input type="string" class="form-control form-control-sm" name="lokasi" id="lokasi" placeholder="Lokasi"
             value="">
     </div>
     <div class="mb-3">

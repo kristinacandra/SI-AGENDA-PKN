@@ -34,8 +34,10 @@
                 <th >No</th>
                 <th >Agenda Kegiatan</th>
                 <th >Nomor Surat</th>
-                <th >Tanggal</th>
                 <th >Waktu</th>
+                <th >Nama</th>
+                <th >Lokasi</th>
+                <th >Status</th>
                 <th >Status</th>
             </tr>
         </thead>
@@ -46,8 +48,9 @@
                     <td class="col-1">{{ $i }}</td>
                     <td class="col-2">{{ $item->agenda_kegiatan }}</td>
                     <td class="col-2">{{ $item->no_surat }}</td>
-                    <td class="col-2">{{ $item->tgl_pelaksanaan }}</td>
                     <td class="col-2">{{ $item->waktu_pelaksanaan }}</td>
+                    <td class="col-2">{{ $item->nama }}</td>
+                    <td class="col-2">{{ $item->lokasi }}</td>
                     <td class="col-2">{{ $item->status }}</td>
                 </tr>
                 <?php $i++; ?>

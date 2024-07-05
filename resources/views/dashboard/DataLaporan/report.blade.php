@@ -36,6 +36,7 @@
                 <th >Nama</th>
                 <th >Agenda Kegiatan</th>
                 <th >Lokasi</th>
+                <th >Deskripsi</th>
             </tr>
         </thead>
           <tbody>
@@ -47,6 +48,7 @@
                     <td class="col-2">{{ $item->nama }}</td>
                     <td class="col-2">{{ $item->acara }}</td>
                     <td class="col-2">{{ $item->lokasi }}</td>
+                    <td class="col-2">{{ $item->deskripsi }}</td>
                 </tr>
                 <?php $i++; ?>
             @endforeach

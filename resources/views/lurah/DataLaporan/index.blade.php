@@ -39,6 +39,7 @@
                     <th >Agenda Kegiatan</th>
                     <th >Lokasi</th>
                     <th >Deskripsi</th>
+                    <th >Catatan</th>
                     <th >Action</th>
                 </tr>
             </thead>
@@ -52,6 +53,14 @@
                         <td class="col-2">{{ $item->acara }}</td>
                         <td class="col-2">{{ $item->lokasi }}</td>
                         <td class="col-2">{{ $item->deskripsi }}</td>
+                        <td class="col-2">
+                            <form action="{{ route('laporan.updateCatatan', $item->id) }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <textarea name="catatan" class="form-control">{{ $item->catatan }}</textarea>
+                                <button type="submit" class="btn btn-primary mt-2">Simpan</button>
+                            </form>
+                        </td>
                         <td class="col-2">
                             <a href="{{ route('report.cetak', $item->id) }}" class="btn btn-warning">Cetak</a>
                         </td>

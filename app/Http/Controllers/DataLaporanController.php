@@ -83,6 +83,18 @@ class DataLaporanController extends Controller
         return redirect()->route('laporan')->with('success', 'Berhasil Melakukan Update Data');
     }
 
+    public function updateCatatan(Request $request, string $id){
+        $request->validate([
+            'catatan' => 'nullable|string',
+        ]);
+
+        $kegiatan = datalaporan::findOrFail($id);
+        $kegiatan->update([
+            'catatan' => $request->catatan,
+        ]);
+        return redirect()->route('LurahLaporan')->with('success', 'Berhasil Menambahkan Laporan');
+    }
+
     /**
      * Remove the specified resource from storage.
      */

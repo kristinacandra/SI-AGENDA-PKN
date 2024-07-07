@@ -36,10 +36,6 @@ Route::get('/tutor', function () {
     return view('Auth.tutor');
 });
 
-// Route::get('/lurah', function () {
-//     return view('lurah.index');
-// });
-
 Route::group(['middleware' => ['auth','ceklevel:lurah']], function () {
     Route::get('/lurah', function () {
         return view('lurah.index');
@@ -96,6 +92,7 @@ Route::put('/laporan/update/{id}', [DataLaporanController::class, 'update'])->na
 Route::get('/laporanreport',[DataLaporanController::class, 'exportpdf'])-> name('laporan.exportpdf');
 Route::get('lurah/laporan', [DataLaporanController::class,'indexLurah'])->name('LurahLaporan');
 Route::get('report/{id}', [DataLaporanController::class, 'cetak'])->name('report.cetak');
+Route::put('/catatan/{id}', [DataLaporanController::class, 'updateCatatan'])->name('laporan.updateCatatan');
 
 
 // Route::get('/register',[LoginController::class, 'register'])->name('register');

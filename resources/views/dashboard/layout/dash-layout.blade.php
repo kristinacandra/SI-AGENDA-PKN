@@ -31,9 +31,6 @@
                        Beranda</a>
                 </li>
             </ul>
-            <ul class="navbar-nav ml-auto">
-                <a href="{{ route('logout') }}" class="nav-link">Logout</a>
-            </ul>
 
             <!-- Right navbar links -->
             {{-- <ul class="navbar-nav ml-auto">

@@ -43,6 +43,10 @@
             <th>Deskripsi</th>
             <td>{{ $kegiatan->deskripsi }}</td>
         </tr>
+        <tr>
+            <th>Catatan</th>
+            <td>{{ $kegiatan->catatan }}</td>
+        </tr>
     </table>
 </body>
 </html>
